@@ -137,46 +137,7 @@
   }
 
   </style>
-   <script>
   
-    window.addEventListener('scroll', function() {
-      var registerButton = document.getElementById('register-button');
-      if (window.pageYOffset > 100) {
-        registerButton.style.display = 'block';
-      } else {
-        registerButton.style.display = 'none';
-      }
-    });
-
-    function openModal() {
-      var modal = document.getElementById('exampleModal');
-      var iframe = document.getElementById('formIframe');
-      var loader = document.getElementById('loader');
-      // Show the modal
-        modal.style.display = 'block';
-        // Hide the iframe and show the loader
-        iframe.style.display = 'none';
-        loader.style.display = 'block';
-        iframe.onload = function() {
-          // Once the iframe is loaded, hide the loader and show the iframe
-          loader.style.display = 'none';
-          iframe.style.display = 'block';
-        };
-        // Set the src attribute after assigning onload function
-        iframe.src = 'https://forms.gle/YoB5UwNfJ83ZcH9G6';
-    }
-    
-
-    function closeModal() {
-      var modal = document.getElementById('exampleModal');
-      var iframe = document.getElementById('formIframe');      
-      // Hide the modal
-      modal.style.display = 'none';      
-      // Reset the iframe source when the modal is closed
-      iframe.src = '';
-    }
-
-  </script>
 </head>
 <body>
 
@@ -191,7 +152,7 @@
       </div>
       <div id="iframeContainer">
         <div id="loader"></div>
-      <iframe id="formIframe"  title="description"></iframe>
+      <iframe id="formIframe"  target="_self" title="description"></iframe>
       </div>
       </div>
     </div>
@@ -365,4 +326,54 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script>
+  
+  window.addEventListener('scroll', function() {
+    var registerButton = document.getElementById('register-button');
+    if (window.pageYOffset > 100) {
+      registerButton.style.display = 'block';
+    } else {
+      registerButton.style.display = 'none';
+    }
+  });
+
+  var iframe = document.getElementById('formIframe');
+    var loader = document.getElementById('loader');
+    var modal = document.getElementById('exampleModal');
+
+// Attach the event listener for the 'load' event
+    iframe.addEventListener('load', function() {
+      // This code will execute when the iframe has finished loading
+      loader.style.display = 'none';
+        iframe.style.display = 'block';
+    });
+
+  function openModal() {    
+   
+    // Show the modal
+      modal.style.display = 'block';
+      // Hide the iframe and show the loader
+      iframe.style.display = 'none';
+      loader.style.display = 'block';
+      // iframe.onload = function() {
+      //   // Once the iframe is loaded, hide the loader and show the iframe
+      //   loader.style.display = 'none';
+      //   iframe.style.display = 'block';
+      // };
+      // Set the src attribute after assigning onload function
+      iframe.src = 'https://forms.gle/YoB5UwNfJ83ZcH9G6';
+  }
+  
+
+
+  function closeModal() {
+    
+    var iframe = document.getElementById('formIframe');      
+    // Hide the modal
+    modal.style.display = 'none';      
+    // Reset the iframe source when the modal is closed
+    iframe.src = '';
+  }
+
+</script>
 </html>
