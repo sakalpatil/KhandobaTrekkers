@@ -102,9 +102,43 @@
     {
       z-index: 9999;
     }
+    #iframeContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio, adjust as needed */
+}
+
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#iframeContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
   </style>
    <script>
-    // JavaScript for showing/hiding the Register Now button
+  
     window.addEventListener('scroll', function() {
       var registerButton = document.getElementById('register-button');
       if (window.pageYOffset > 100) {
@@ -113,6 +147,37 @@
         registerButton.style.display = 'none';
       }
     });
+
+    function openModal() {
+      var modal = document.getElementById('exampleModal');
+      var iframe = document.getElementById('formIframe');
+      var loader = document.getElementById('loader');
+      
+      // Show the modal
+      modal.style.display = 'block';
+      
+      // Hide the iframe and show the loader
+      iframe.style.display = 'none';
+      loader.style.display = 'block';
+      
+      iframe.onload = function() {
+        // Once the iframe is loaded, hide the loader and show the iframe
+        loader.style.display = 'none';
+        iframe.style.display = 'block';
+      };
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('exampleModal');
+      var iframe = document.getElementById('formIframe');
+      
+      // Hide the modal
+      modal.style.display = 'none';
+      
+      // Reset the iframe source when the modal is closed
+      iframe.src = '';
+    }
+
   </script>
 </head>
 <body>
@@ -123,14 +188,18 @@
       <div class="modal-header">
         <h6 class="modal-title" id="exampleModalLabel">📝 नोंदणी फॉर्म</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true" onclick="closeModal()">&times;</span>
         </button>
       </div>
-      <iframe src="https://forms.gle/YoB5UwNfJ83ZcH9G6" title="description"></iframe>
+      <div id="iframeContainer">
+        <div id="loader"></div>
+      <iframe id="formIframe" src="https://forms.gle/YoB5UwNfJ83ZcH9G6" title="description"></iframe>
+      </div>
+      </div>
     </div>
   </div>
 </div>
-  <a data-toggle="modal" data-target="#exampleModal" id="register-button" class="btn btn-success">📝 <b>आत्ताच नोंदणी करा</b></a>
+  <a data-toggle="modal" data-target="#exampleModal" id="register-button" class="btn btn-success" onclick="openModal()">📝 <b>आत्ताच नोंदणी करा</b></a>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
