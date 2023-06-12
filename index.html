@@ -6,8 +6,7 @@
   <title>पन्हाळा ते पावनखिंड पदभ्रमंती</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-  <style>
- 
+  <style> 
     .hero {
       background-image: url('Sahyavede_Panhala_Pawankhind_Feat_1.jpg');
       background-size: cover;
@@ -79,7 +78,7 @@
       margin-bottom: 0px !important;
     }
     .navbar-brand img {
-      max-height: 50px;
+      max-height: 2.5rem;
       width: auto;
     }
     #register-button {
@@ -115,8 +114,7 @@
   }
 
   </style>
-  <script>
-  
+  <script>  
     window.addEventListener('scroll', function() {
       var registerButton = document.getElementById('register-button');
       if (window.pageYOffset > 100) {
@@ -124,19 +122,14 @@
       } else {
         registerButton.style.display = 'none';
       }
-
       
       registerButton.addEventListener("click", function() {
+        var element = document.getElementById('modalError');
+        element.style.display = 'none';
         setTimeout(function() {
-          
-          var element = document.getElementById('modalError');
           element.style.display = 'block'; // Change 'block' to the desired display property
-        }, 2000);
+        }, 3000);
       });
-  
-   
-      
-      
      
     });
   </script> 
@@ -294,9 +287,11 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">              
                   <p>● मोहीम शुल्क <b>₹५९९</b>, ५ जुलै २०२३ पुर्वी खालील क्रमांकावर गूगल पे द्वारे जमा करावे.</p>
-                  <p>  सागर जाधव:  73870 67096</p>
-                  <p> सुजय खालकर: 97644 02335  </p>
-                  <p>अर्जुन गावडे    9623814909 </p>       
+                  <div class="row row-cols-1 row-cols-md-3 g-4"> 
+                  <div class="col">  सागर जाधव:  73870 67096</div>
+                  <div class="col"> सुजय खालकर: 97644 02335  </div>
+                  <div class="col">अर्जुन गावडे    9623814909 </div>     
+                </div>  
                 
                 </li>
               </ul>
