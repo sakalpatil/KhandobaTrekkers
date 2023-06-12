@@ -109,8 +109,37 @@
     padding-bottom: 56.25%; /* 16:9 aspect ratio, adjust as needed */
   }
 
+  #modalError
+  {
+    display: none;
+  }
+
   </style>
+  <script>
   
+    window.addEventListener('scroll', function() {
+      var registerButton = document.getElementById('register-button');
+      if (window.pageYOffset > 100) {
+        registerButton.style.display = 'block';
+      } else {
+        registerButton.style.display = 'none';
+      }
+
+      
+      registerButton.addEventListener("click", function() {
+        setTimeout(function() {
+          
+          var element = document.getElementById('modalError');
+          element.style.display = 'block'; // Change 'block' to the desired display property
+        }, 2000);
+      });
+  
+   
+      
+      
+     
+    });
+  </script> 
 </head>
 <body>
 
@@ -118,9 +147,10 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title" id="exampleModalLabel">📝 नोंदणी फॉर्म</h6>
+        <h6 class="modal-title mr-3" id="exampleModalLabel">📝 नोंदणी फॉर्म</h6>
+        <div class="alert alert-danger" id="modalError" >❗ अजून नोंदणी फॉर्म उघडला नाही ? <a href="https://forms.gle/YoB5UwNfJ83ZcH9G6" target="_blank">येथें क्लिक </a>करा. </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true" onclick="closeModal()">&times;</span>
+          <span aria-hidden="true" >&times;</span>
         </button>
       </div>
 
@@ -129,7 +159,7 @@
     </div>
   </div>
 </div>
-  <a data-toggle="modal" data-target="#exampleModal" id="register-button" class="btn btn-success" >📝 <b>आत्ताच नोंदणी करा</b></a>
+  <a data-toggle="modal" data-target="#exampleModal" id="register-button" class="btn btn-success" onclick="openModal()" >📝 <b>आत्ताच नोंदणी करा</b></a>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
@@ -171,7 +201,7 @@
         <li class="list-group-item list-group-item-info"><b class="mr-1">१. मोहीम शुल्क:</b> नाममात्र किंमतीत जेवण, प्रवास आणि मुक्काम. </li>
         <li class="list-group-item"><b class="mr-1">२. प्रवास:</b> 'कोल्हापूर ते पन्हाळा' आणि 'पावनखिंड ते कोल्हापूर' हे दोन्ही प्रवास मोहीम शुल्कातून होतात, त्या करता वेगळे पैसे द्यावे लागत नाहीत.</li>
         <li class="list-group-item list-group-item-info"><b class="mr-1">३. जेवण व नाष्टा:</b> ३ वेळेचे जेवण आणि २ वेळेचा नाष्टा व चहा. </li>
-        <li class="list-group-item"><b class="mr-1">४.पहिल्या दिवशीचा डबा:</b> पहिल्या दिवशीचा डबा दखेल मोहीम शुल्कातून दिला जातो.</li>
+        <li class="list-group-item"><b class="mr-1">४.पहिल्या दिवशीचा डबा:</b> पहिल्या दिवशीचा डबा देखील मोहीम शुल्कातून दिला जातो.</li>
         <li class="list-group-item list-group-item-info"><b class="mr-1"> ५.ट्रेकिंग बॅग:</b>  ट्रेकिंग बॅग मुक्कामाच्या ठिकाणी पोहच केली जाते.</li>  
       </ul>
     </div>
@@ -235,13 +265,13 @@
           <span class="mr-1"><b>सकाळी ८:३० वाजता:</b></span>पावनखिंडीकडे प्रस्थान.
         </li>
         <li class="list-group-item">              
-          <span class="mr-1"><b>सायंकाळी १ वाजता:</b></span>पावनखिंड येथे शिवप्रार्थना.            
+          <span class="mr-1"><b>दुपारी १ वाजता:</b></span>पावनखिंड येथे शिवप्रार्थना.            
         </li>
         <li class="list-group-item">              
           <span class="mr-1"><b>दुपारी २ वाजता:</b></span>मांसाहारी जेवण.              
         </li>
         <li class="list-group-item">              
-          <span class="mr-1"><b>दुपारी ४ वाजत:</b></span>बस ने पावनखिंडीतून कोल्हापूर कडे प्रस्थान.              
+          <span class="mr-1"><b>दुपारी ४ वाजता:</b></span>बस ने पावनखिंडीतून कोल्हापूर कडे प्रस्थान.              
         </li>
         <li class="list-group-item">              
           <span class="mr-1"><b>सायंकाळी ५ वाजता:</b></span>खंडोबा तालीम, छ. शिवाजी पेठ येथे मोहिमेची सांगता.           
@@ -282,6 +312,7 @@
         <li class="list-group-item list-group-item-danger">🔴 मोहिमेवर असताना कोणत्याही प्रकारचे मध्यपान व धूम्रपान करताना आढळल्यास कडकं कारवाई करण्यात येईल.</li>
         
         <li class="list-group-item ">🔴 संपूर्ण मोहिमेत पन्हाळा ते पावनखिंड परिसरात कचरा होणार नाही याची काळजी घ्यावी.</li>
+        <li class="list-group-item ">🔴         मोहिमेवर स्वतःच्या जबाबदारी वर येणे.</li>
 
       </ul>
     </div>
@@ -297,15 +328,5 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script>
-  
-  window.addEventListener('scroll', function() {
-    var registerButton = document.getElementById('register-button');
-    if (window.pageYOffset > 100) {
-      registerButton.style.display = 'block';
-    } else {
-      registerButton.style.display = 'none';
-    }
-  });
-</script>
+
 </html>
