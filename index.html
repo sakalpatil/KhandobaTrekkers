@@ -6,19 +6,67 @@
   <title>पन्हाळा ते पावनखिंड पदभ्रमंती</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style> 
-    .slider-item {
-      display: none;
-    }
-    .slider-item.active {
-      display: block;
-    }
 
     
     #imps,#imps ol{color:#721c24}#register-button,.hero button{box-shadow:0 2px 10px rgba(0,0,0,.2);transition:box-shadow .3s ease-in-out}.hero{background-image:url('group.jpeg');background-size:cover;background-position:center;height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff ;text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);}.hero h2{font-weight:800}.hero h3{font-weight:600;margin-top:2.5rem}h4{font-weight:700;font-size:large}.hero p{font-size:1.5rem;margin-bottom:2rem}#features,#schedule{padding:1rem 0;color:#0c5460}#features ol{color:#0c5460}#imps{padding:1rem 0}.alert{margin-bottom:0!important}.navbar-brand img{max-height:2.5rem;width:auto}#register-button{position:fixed;bottom:20px;right:20px;display:none;z-index:9998}.card-header{padding:.5rem}iframe{height:70vh}.modal{z-index:9999}#iframeContainer{position:relative;width:100%;height:70vh;padding-bottom:56.25%}#modalError{display:none}
   </style>
   <script>  
-  document.addEventListener("DOMContentLoaded", function() {
   var slideIndex = 0;
+  var timerId;
+
+
+   function up()
+  {
+    clearTimeout(timerId);
+
+    var imageUrlsUp = [    
+   
+   "1.jpg",
+   "2.jpeg",
+   "3.jpeg",
+   "4.jpeg",
+
+
+ ];
+   
+    slideIndex++;
+    if (slideIndex > 3) {
+      slideIndex = 0;
+    }
+    console.log(slideIndex)
+    var slidesUp = document.getElementsByClassName("hero");
+    slidesUp[0].style.backgroundImage = "url(" + imageUrlsUp[slideIndex] + ")"; 
+   
+  }
+  function down()
+  {
+    clearTimeout(timerId);
+
+        var imageUrlsDown = [    
+      
+      "1.jpg",
+      "2.jpeg",
+      "3.jpeg",
+      "4.jpeg",
+
+
+    ];
+    
+    slideIndex--;
+    if (slideIndex < 0) {
+      slideIndex = 3;
+    }
+    
+    console.log(slideIndex)
+    var slidesDown = document.getElementsByClassName("hero");
+    slidesDown[0].style.backgroundImage = "url(" + imageUrlsDown[slideIndex] + ")"; 
+  
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+
+
+  var slides = document.getElementsByClassName("hero");
   var imageUrls = [    
    
     "1.jpg",
@@ -31,9 +79,10 @@
 
   showSlides();
 
+ 
   function showSlides() {
   
-    var slides = document.getElementsByClassName("hero");
+   
     slideIndex++;
     if (slideIndex > imageUrls.length) {
       slideIndex = 1;
@@ -43,7 +92,7 @@
 
   
   
-    setTimeout(showSlides, 4000); // Change slide every 5 seconds
+       timerId =  setTimeout(showSlides, 4000); // Change slide every 5 seconds
   }
 });
 
@@ -69,7 +118,7 @@
             <div class="col">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">              
-                    <p>● मोहीम शुल्क <b>₹६६६</b>, ५ जुलै २०२३ पुर्वी येथे भरा <button class="btn btn-sm btn-success" >₹६६६ भरा</button> किंवा या(सुजय खालकर: 97644 02335) क्रमांकावर गूगल पे द्वारे जमा करावे.</p>
+                    <p>● मोहीम शुल्क <b>₹६६६</b>, ५ जुलै २०२३ पुर्वी येथे भरा <a target="_blank" href="upi://pay?mode=02&pa=Q938385825@ybl&purpose=00&mc=0000&pn=PhonePeMerchant&orgid=180001&sign=MEQCIGftRknNmYwZnU53PhQLdUAxENA7QNNfjylmdDlGHNyCAiB2OA8oQ5gQqQ6500iOlTpWjHj0CoRBwjdfxcttC75BrA==" class="btn btn-sm btn-success" >₹६६६ भरा</a> किंवा या( प्रसन्न जाधव(बंडा ): 8485873541) क्रमांकावर गूगल पे द्वारे जमा करावे.</p>
                
                  
                     <div class="alert alert-danger" id="modalError" >❗ अजून नोंदणी फॉर्म उघडला नाही ? <a href="https://forms.gle/YoB5UwNfJ83ZcH9G6" target="_blank">येथें क्लिक </a>करा. </div>
@@ -126,6 +175,14 @@
   
     </div>
     </div>
+    <a class="carousel-control-prev" onclick="down()" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" onclick="up()" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </section>
  
   <section id="features" class="bg-light">
@@ -241,10 +298,11 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item"> 
                 <div class="row row-cols-1 row-cols-md-4 g-4">                  
-                  <div class="col"> सुजय खालकर: 97644 02335  </div>                  
-                  <div class="col">अर्जुन गावडे    9623814909 </div>   
-                  <div class="col">  सागर जाधव:  73870 67096</div>
-                  <div class="col">गौरी पेडणेकर 90757 79573</div>  
+                  <div class="col"> सुजय खालकर: 9764402335  </div>                  
+                  <div class="col"> अर्जुन गावडे: 9623814909 </div>   
+                  <div class="col"> सागर जाधव: 7387067096</div>
+                  <div class="col"> प्रसन्न जाधव(बंडा): 8485873541</div>
+                  <div class="col">गौरी पेडणेकर: 7499272375</div>  
                 </div>  
               </li>
             </ul>
