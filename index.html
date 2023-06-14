@@ -6,9 +6,49 @@
   <title>पन्हाळा ते पावनखिंड पदभ्रमंती</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style> 
+    .slider-item {
+      display: none;
+    }
+    .slider-item.active {
+      display: block;
+    }
+
+    
     #imps,#imps ol{color:#721c24}#register-button,.hero button{box-shadow:0 2px 10px rgba(0,0,0,.2);transition:box-shadow .3s ease-in-out}.hero{background-image:url('group.jpeg');background-size:cover;background-position:center;height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff ;text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);}.hero h2{font-weight:800}.hero h3{font-weight:600;margin-top:2.5rem}h4{font-weight:700;font-size:large}.hero p{font-size:1.5rem;margin-bottom:2rem}#features,#schedule{padding:1rem 0;color:#0c5460}#features ol{color:#0c5460}#imps{padding:1rem 0}.alert{margin-bottom:0!important}.navbar-brand img{max-height:2.5rem;width:auto}#register-button{position:fixed;bottom:20px;right:20px;display:none;z-index:9998}.card-header{padding:.5rem}iframe{height:70vh}.modal{z-index:9999}#iframeContainer{position:relative;width:100%;height:70vh;padding-bottom:56.25%}#modalError{display:none}
   </style>
   <script>  
+  document.addEventListener("DOMContentLoaded", function() {
+  var slideIndex = 0;
+  var imageUrls = [    
+   
+    "1.jpg",
+    "2.jpeg",
+    "3.jpeg",
+    "4.jpeg",
+
+
+  ];
+
+  showSlides();
+
+  function showSlides() {
+  
+    var slides = document.getElementsByClassName("hero");
+    slideIndex++;
+    if (slideIndex > imageUrls.length) {
+      slideIndex = 1;
+    }
+ 
+      slides[0].style.backgroundImage = "url(" + imageUrls[slideIndex-1] + ")";
+
+  
+  
+    setTimeout(showSlides, 4000); // Change slide every 5 seconds
+  }
+});
+
+
+
    window.addEventListener("scroll",function(){var e=document.getElementById("register-button");window.pageYOffset>100?e.style.display="block":e.style.display="none",e.addEventListener("click",function(){var e=document.getElementById("modalError");e.style.display="none",setTimeout(function(){e.style.display="block"},3e3)})});
   </script> 
 </head>
@@ -29,7 +69,7 @@
             <div class="col">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">              
-                    <p>● मोहीम शुल्क <b>₹६९९</b>, ५ जुलै २०२३ पुर्वी येथे भरा <button class="btn btn-sm btn-success" >₹६९९ भरा</button> किंवा या(सुजय खालकर: 97644 02335) क्रमांकावर गूगल पे द्वारे जमा करावे.</p>
+                    <p>● मोहीम शुल्क <b>₹६६६</b>, ५ जुलै २०२३ पुर्वी येथे भरा <button class="btn btn-sm btn-success" >₹६६६ भरा</button> किंवा या(सुजय खालकर: 97644 02335) क्रमांकावर गूगल पे द्वारे जमा करावे.</p>
                
                  
                     <div class="alert alert-danger" id="modalError" >❗ अजून नोंदणी फॉर्म उघडला नाही ? <a href="https://forms.gle/YoB5UwNfJ83ZcH9G6" target="_blank">येथें क्लिक </a>करा. </div>
@@ -77,12 +117,17 @@
   </nav>
   <section class="hero">
     <div class="container">
-      <h2>पन्हाळा ते पावनखिंड पदभ्रमंती मोहीम १५ आणि १६ जुलै २०२३</h2>     
-      <h3>मोहीम शुल्क <span>₹६९९</span> रु फक्त</h3>      
-      <p class="mt-3">निसर्गरम्य वातावरणामध्ये ट्रेकिंगच्या </br> साहसासाठी खालील माहिती वाचून आत्ताच नोंदणी करा.</p>
       
+      <h2>पन्हाळा ते पावनखिंड पदभ्रमंती मोहीम १५ आणि १६ जुलै २०२३</h2>     
+      <h3>मोहीम शुल्क <span>₹६६६</span> रु फक्त</h3>      
+      <p class="mt-3">निसर्गरम्य वातावरणामध्ये ट्रेकिंगच्या </br> साहसासाठी खालील माहिती वाचून आत्ताच नोंदणी करा.</p>
+      </div>
+ 
+  
+    </div>
     </div>
   </section>
+ 
   <section id="features" class="bg-light">
     <div class="container">
       <h4> ♦️ आमच्या मोहिमेची वैशिष्टे  ♦️</h4>
