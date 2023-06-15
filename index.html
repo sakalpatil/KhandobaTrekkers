@@ -6,99 +6,10 @@
   <title>पन्हाळा ते पावनखिंड पदभ्रमंती</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style> 
-
-    
     #imps,#imps ol{color:#721c24}#register-button,.hero button{box-shadow:0 2px 10px rgba(0,0,0,.2);transition:box-shadow .3s ease-in-out}.hero{background-image:url('group.jpeg');background-size:cover;background-position:center;height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff ;text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);}.hero h2{font-weight:800}.hero h3{font-weight:600;margin-top:2.5rem}h4{font-weight:700;font-size:large}.hero p{font-size:1.5rem;margin-bottom:2rem}#features,#schedule{padding:1rem 0;color:#0c5460}#features ol{color:#0c5460}#imps{padding:1rem 0}.alert{margin-bottom:0!important}.navbar-brand img{max-height:2.5rem;width:auto}#register-button{position:fixed;bottom:20px;right:20px;display:none;z-index:9998}.card-header{padding:.5rem}iframe{height:70vh}.modal{z-index:9999}#iframeContainer{position:relative;width:100%;height:70vh;padding-bottom:56.25%}#modalError{display:none}
   </style>
   <script>  
-  var slideIndex = 0;
-  var timerId;
-
-
-   function up()
-  {
-    clearTimeout(timerId);
-
-    var imageUrlsUp = [    
-   
-   "1.jpg",
-   "2.jpeg",
-   "3.jpeg",
-   "4.jpeg",
-
-
- ];
-   
-    slideIndex++;
-    if (slideIndex > 3) {
-      slideIndex = 0;
-    }
-    console.log(slideIndex)
-    var slidesUp = document.getElementsByClassName("hero");
-    slidesUp[0].style.backgroundImage = "url(" + imageUrlsUp[slideIndex] + ")"; 
-   
-  }
-  function down()
-  {
-    clearTimeout(timerId);
-
-        var imageUrlsDown = [    
-      
-      "1.jpg",
-      "2.jpeg",
-      "3.jpeg",
-      "4.jpeg",
-
-
-    ];
-    
-    slideIndex--;
-    if (slideIndex < 0) {
-      slideIndex = 3;
-    }
-    
-    console.log(slideIndex)
-    var slidesDown = document.getElementsByClassName("hero");
-    slidesDown[0].style.backgroundImage = "url(" + imageUrlsDown[slideIndex] + ")"; 
-  
-  }
-  
-  document.addEventListener("DOMContentLoaded", function() {
-
-
-  var slides = document.getElementsByClassName("hero");
-  var imageUrls = [    
-   
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-
-
-  ];
-
-  showSlides();
-
- 
-  function showSlides() {
-  
-   
-    slideIndex++;
-    if (slideIndex > imageUrls.length) {
-      slideIndex = 1;
-    }
- 
-      slides[0].style.backgroundImage = "url(" + imageUrls[slideIndex-1] + ")";
-
-  
-  
-       timerId =  setTimeout(showSlides, 4000); // Change slide every 5 seconds
-  }
-});
-
-
-
-   window.addEventListener("scroll",function(){var e=document.getElementById("register-button");window.pageYOffset>100?e.style.display="block":e.style.display="none",e.addEventListener("click",function(){var e=document.getElementById("modalError");e.style.display="none",setTimeout(function(){e.style.display="block"},3e3)})});
+  var timerId,slideIndex=0;function up(){clearTimeout(timerId),++slideIndex>3&&(slideIndex=0),console.log(slideIndex),document.getElementsByClassName("hero")[0].style.backgroundImage="url("+["1.jpg","2.jpeg","3.jpeg","4.jpeg",][slideIndex]+")"}function down(){clearTimeout(timerId),--slideIndex<0&&(slideIndex=3),console.log(slideIndex),document.getElementsByClassName("hero")[0].style.backgroundImage="url("+["1.jpg","2.jpeg","3.jpeg","4.jpeg",][slideIndex]+")"}document.addEventListener("DOMContentLoaded",function(){var e=document.getElementsByClassName("hero"),n=["1.jpg","2.jpg","3.jpg","4.jpg",];(function d(){++slideIndex>n.length&&(slideIndex=1),e[0].style.backgroundImage="url("+n[slideIndex-1]+")",timerId=setTimeout(d,4e3)})()}),window.addEventListener("scroll",function(){var e=document.getElementById("register-button");window.pageYOffset>100?e.style.display="block":e.style.display="none",e.addEventListener("click",function(){var e=document.getElementById("modalError");e.style.display="none",setTimeout(function(){e.style.display="block"},3e3)})});
   </script> 
 </head>
 <body>
