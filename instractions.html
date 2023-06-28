@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>पन्हाळा ते पावनखिंड पदभ्रमंती</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+  hr{ margin: 0.2rem; padding: 0.2rem;} 
+    #imps,#imps ol{color:#721c24}#register-button,.hero button{box-shadow:0 2px 10px rgba(0,0,0,.2);transition:box-shadow .3s ease-in-out}.hero{position: relative; background-image:url('group.jpeg');background-size:cover;background-position:center;height:40vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff ;text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);}.hero h2{font-weight:800}.hero h3{font-weight:600;margin-top:2.5rem}h4{font-weight:700;font-size:large}.hero p{font-size:1.5rem;font-weight: 600;}#features,#schedule{padding:1rem 0;color:#0c5460}#features ol{color:#0c5460}#imps{padding:1rem 0}.alert{margin-bottom:0!important}.navbar-brand img{max-height:2.5rem;width:auto}#register-button{position:fixed;bottom:20px;right:20px;display:none;z-index:9998}.card-header{padding:.5rem}iframe{height:70vh}.modal{z-index:9999}#iframeContainer{position:relative;width:100%;height:70vh;padding-bottom:56.25%}#modalError{display:none}
+  </style>
+  <script>  
+  var timerId,slideIndex=0;function up(){clearTimeout(timerId),++slideIndex>3&&(slideIndex=0),console.log(slideIndex),document.getElementsByClassName("hero")[0].style.backgroundImage="url("+["1.jpg","2.jpg","3.jpg","4.jpg",][slideIndex]+")"}function down(){clearTimeout(timerId),--slideIndex<0&&(slideIndex=3),console.log(slideIndex),document.getElementsByClassName("hero")[0].style.backgroundImage="url("+["1.jpg","2.jpg","3.jpg","4.jpg",][slideIndex]+")"}document.addEventListener("DOMContentLoaded",function(){var e=document.getElementsByClassName("hero"),n=["1.jpg"];(function d(){++slideIndex>n.length&&(slideIndex=1),e[0].style.backgroundImage="url("+n[slideIndex-1]+")",timerId=setTimeout(d,4e3)})()}),window.addEventListener("scroll",function(){var e=document.getElementById("register-button");window.pageYOffset>100?e.style.display="block":e.style.display="none",e.addEventListener("click",function(){var e=document.getElementById("modalError");e.style.display="none",setTimeout(function(){e.style.display="block"},3e3)})});
+  </script> 
+</head>
+<body>
+
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6 class="modal-title mr-3" id="exampleModalLabel">📝 नोंदणी फॉर्म</h6>        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" >&times;</span>
+        </button>
+      </div>
+      <div class="showForm" >
+        <img style="width: 100%;" src="1.jpg" alt="Logo">      
+       
+    </div>
+  
+    </div>
+  </div>
+</div>
+  <a data-toggle="modal" data-target="#exampleModal" id="register-button" class="btn btn-success"  >📝 <b>आत्ताच नोंदणी करा</b></a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+        <img src="logo-transparent-png.png" alt="Logo">      
+     </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#features">आमच्या मोहिमेची वैशिष्टे</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#schedule">वेळापत्रक</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#imps">महत्वच्या सूचना </a>
+        </li>  
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">संपर्क</a>
+        </li>      
+      </ul>
+    </div>
+  </nav>
+  <section class="hero bg-dark">
+    <div class="container">
+      
+      <h5>पन्हाळा ते पावनखिंड पदभ्रमंती मोहीम</h5> 
+      <h6>१५ आणि १६ जुलै २०२३</h6>   
+          
+        <p>मोहिमेसाठी सहभागी झाल्याबद्दल आपले आभार..! </p>
+      <div>खालील मोहिमेची माहिती व सूचना वाचा.</div>
+      </div>
+ 
+     
+    </div>
+    </div>
+    
+  </section>
+  <section id="carry" class="bg-light ">
+    <div class="container pt-3" >       
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <b>☎️ संपर्क ☎️</b>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"> 
+                <div class="row row-cols-1 row-cols-md-1">                  
+                  <div class="col">नाममात्र किंमतीत जेवण, प्रवास आणि मुक्काम.</div><hr>                  
+                  <div class="col"> 'कोल्हापूर ते पन्हाळा' आणि 'पावनखिंड ते कोल्हापूर' हे दोन्ही प्रवास मोहीम शुल्कातून होतात, त्या करता वेगळे पैसे द्यावे लागत नाहीत. </div><hr>   
+                  <div class="col"> सागर जाधव: 7387067096  प्रवास आणि मुक्काम.</div><hr>
+                  <div class="col">  प्रवास आणि मुक्काम. प्रसन्न जाधव(बंडा): 8485873541</div><hr>
+                  <div class="col">आकांक्षा पेडणेकर: 7499272375</div>  <hr>
+                  <div class="col">'कोल्हापूर ते पन्हाळा' आणि 'पावनखिंड ते कोल्हापूर' हे दोन्ही प्रवास मोहीम शुल्कातून होतात, त्या करता वेगळे पैसे द्यावे लागत नाहीत.</div><hr>  
+                </div>  
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </section> 
+ 
+
+
+  <!-- Schedule Section -->
+  <section id="schedule" class="bg-light">
+    <div class="container">
+      <h4 ><i class="fas fa-calendar-alt"></i>♦️ मोहीम वेळापत्रक ♦️</h4>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <b>▪️ १५ जुलै शनिवार</b>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">              
+                 <span class="mr-1"><b>सकाळी ७:३० वाजता:</b></span>खंडोबा तालीम, छ.शिवाजी पेठ येथे जमणे.               
+              </li>
+              <li class="list-group-item">              
+                <span class="mr-1"><b>सकाळी ८ वाजता:</b></span>नाष्टा करून बस ने पन्हाळागडाकडे प्रस्तान.               
+             </li>
+             <li class="list-group-item">              
+                <span class="mr-1"><b>सकाळी ९ वाजता:</b></span>पन्हाळ्याहून वीर शिवा काशीद व वीर बाजीप्रभूंच्या स्मारकांना वंदन करून मोहिमेची सुरुवात.                
+              </li>
+              <li class="list-group-item">              
+                <span class="mr-1"><b>दुपारी १२ वाजता:</b></span>निसर्गरम्य वातावरणात वणभोजन.               
+              </li>
+              <li class="list-group-item">              
+                <span class="mr-1"><b>सायंकाळी ५ वाजता:</b></span>मुक्कामाच्या ठिकाणी(कळकेवाडी) येथे चहा पाण्याची सोय.               
+              </li>
+              <li class="list-group-item">              
+                <span class="mr-1"><b>रात्री ८ वाजता:</b></span>शुद्ध शाकाहारी जेवण.               
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <div class="alert alert-success text-center"><b>कळकेवाडी</b> 
+              <spam data-toggle="tooltip" data-placement="bottom" title="करपेवाडी आणि कळकेवाडी या गावांच्या नावात गोंधळ होतो.  कळकेवाडी हा आपल्या मोहिमेचा मुक्कम आहे">(🚫करपेवाडी नाही)</spam> येथे मुक्काम.</div>
+        </div>
+      </div>
+
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        <b> ▪️ १६ जुलै रविवार</b>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">              
+           <span class="mr-1"><b>सकाळी ७:३० वाजता:</b></span>चहा व नाष्टा.               
+        </li>
+        <li class="list-group-item">              
+          <span class="mr-1"><b>सकाळी ८ वाजता:</b></span>गावातील लहान मुलांना वह्या, पुस्तके आणि रेनकोट वाटपाचा कार्यक्रम.
+       </li>
+
+        <li class="list-group-item">              
+          <span class="mr-1"><b>सकाळी ८:३० वाजता:</b></span>पावनखिंडीकडे प्रस्थान.
+        </li>
+        <li class="list-group-item">              
+          <span class="mr-1"><b>दुपारी १ वाजता:</b></span>पावनखिंड येथे शिवप्रार्थना.            
+        </li>
+        <li class="list-group-item">              
+          <span class="mr-1"><b>दुपारी २ वाजता:</b></span>मांसाहारी जेवण.              
+        </li>
+        <li class="list-group-item">              
+          <span class="mr-1"><b>दुपारी ४ वाजता:</b></span>बस ने पावनखिंडीतून कोल्हापूर कडे प्रस्थान.              
+        </li>
+        <li class="list-group-item">              
+          <span class="mr-1"><b>सायंकाळी ५ वाजता:</b></span>खंडोबा तालीम, छ. शिवाजी पेठ येथे मोहिमेची सांगता.           
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+    </div>    
+  </section>  
+
+  
+  <section id="imps" class="bg-light">
+    <div class="container">
+      <h4>♦️ महत्वच्या सूचना ♦️</h4>
+      <ol class="mt-3 list-group">
+        <li class="list-group-item list-group-item-danger">🔴 मोहिमेवर असताना कोणत्याही प्रकारचे मध्यपान व धूम्रपान करताना आढळल्यास कडकं कारवाई करण्यात येईल.</li>
+        
+        <li class="list-group-item ">🔴 संपूर्ण मोहिमेत पन्हाळा ते पावनखिंड परिसरात कचरा होणार नाही याची काळजी घ्यावी.</li>
+        <li class="list-group-item ">🔴         मोहिमेवर स्वतःच्या जबाबदारी वर येणे.</li>
+
+      </ul>
+    </div>
+  </section>
+
+   <!-- Footer -->
+   <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p>&copy; 2023 Khandoba Trekkers. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
